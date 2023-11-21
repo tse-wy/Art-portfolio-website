@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" type="text/css" href="shop3.css">
+    <link rel="stylesheet" type="text/css" href="css/shop3.css">
+</head>
+<body class="no-padding">
+    <div class="wrapper">
+        <header class="top-left-header">
+            <img src="logo.jpg" alt="Logo" class="logo-image">
+        </header>
+
+        <!-- navbar -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html#home" class="navbar-links">Home</a></li>
+                <li><a href="index.html#portfolio" class="navbar-links">Portfolio</a></li>
+                <li><a href="index.html#about" class="navbar-links">About</a></li>
+                <li><a href="index.html#shop" class="navbar-links">Shop</a></li>
+                <li><a href="index.html#contact" class="navbar-links">Contact</a></li>
+            </ul>
+        </nav>
+<!-- Scroll buttons -->
+        <button class="scroll-button top-button" onclick="scrollToTop()">↑</button>
+        <button class="scroll-button bottom-button" onclick="scrollToBottom()">↓</button>
+    
+<!-- silhouette shop -->
+    <section class="shop" id="shop">
+        <div class="container">
+            <!-- Item 1 -->
+            <div class="box shop-item" data-item-id="1">
+                <img src="kubo.JPG" alt="Product Image">
+                <h4>The Sisters</h4>
+                <h5>£30</h5>
+                <div class="cart">
+                    <box-icon name='cart' color='#827444'></box-icon>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="box shop-item" data-item-id="2">
+                <img src="coraline.JPG" alt="Product Image">
+                <h4>Coraline</h4>
+                <h5>£30</h5>
+                <div class="cart">
+                    <box-icon name='cart' color='#827444'></box-icon>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="box shop-item" data-item-id="3">
+                <img src="edward scissorhands.JPG" alt="Product Image">
+                <h4>Edward Scissorhands</h4>
+                <h5>£30</h5>
+                <div class="cart">
+                    <box-icon name='cart' color='#827444'></box-icon>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="box shop-item" data-item-id="4">
+                <img src="morticia.JPG" alt="Product Image">
+                <h4>Morticia</h4>
+                <h5>£30</h5>
+                <div class="cart">
+                    <box-icon name='cart' color='#827444'></box-icon>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="box shop-item" data-item-id="5">
+                <img src="gomez.JPG" alt="Product Image">
+                <h4>Gomez</h4>
+                <h5>£30</h5>
+                <div class="cart">
+                    <box-icon name='cart' color='#827444'></box-icon>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="box shop-item" data-item-id="6">
+                <img src="m+g.JPG" alt="Product Image">
+                <h4>Morticia & Gomez</h4>
+                <h5>£40</h5>
+                <div class="cart">
+                    <box-icon name='cart' color='#827444'></box-icon>
+                </div>
+            </div>
+
+             <!-- Item 7 -->
+             <div class="box shop-item" data-item-id="7">
+                <img src="custom 1.JPG" alt="Product Image">
+                <h4>Custom Silhouette</h4>
+                <h5>£45</h5>
+                <div class="cart">
+                    <box-icon name='cart' color='#827444'></box-icon>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="box shop-item" data-item-id="8">
+                <img src="custom 2.JPG" alt="Product Image">
+                <h4>Custom Silouette</h4>
+                <h5>£45</h5>
+                <div class="cart">
+                    <box-icon name='cart' color='#827444'></box-icon>
+                </div>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="box shop-item" data-item-id="9">
+                <img src="wednesday.JPG" alt="Product Image">
+                <h4>Wednesday</h4>
+                <h5>£40</h5>
+                <div class="cart">
+                    <box-icon name='cart' color='#827444'></box-icon>
+                </div>
+            </div>
+        </div>
+
+        <!-- sold out miscellaneous window -->
+        <div id="soldOutPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="closeSoldOutPopup">&times;</span>
+                <p>Sorry, this item is sold out!</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="copyright">2023 Nicole Nichols</div>
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <span>|</span>
+            <a href="#" class="footer-link">Terms and Conditions</a>
+        </footer>
+    </div>
+
+    <!-- JavaScript for smooth scrolling and button display -->
+    <script>
+        // JavaScript code for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Get the buttons
+        const topButton = document.querySelector('.top-button');
+        const bottomButton = document.querySelector('.bottom-button');
+
+        // Show or hide the buttons based on scroll position
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topButton.style.display = 'block';
+            } else {
+                topButton.style.display = 'none';
+            }
+
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 20) {
+                bottomButton.style.display = 'none';
+            } else {
+                bottomButton.style.display = 'block';
+            }
+        };
+
+        // Scroll to top function
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
+
+        // Scroll to bottom function
+        function scrollToBottom() {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        // sold out
+
+        document.addEventListener('DOMContentLoaded', function () {
+    // Attach click event to each shop item
+    const shopItems = document.querySelectorAll('.shop-item');
+    shopItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            showSoldOutPopup();
+        });
+    });
+
+    // Attach close event to the sold-out popup
+    document.getElementById('closeSoldOutPopup').addEventListener('click', function () {
+        hideSoldOutPopup();
+    });
+
+    // Close the popup if the user clicks outside of it
+    window.addEventListener('click', function (event) {
+        if (event.target === document.getElementById('soldOutPopup')) {
+            hideSoldOutPopup();
+        }
+    });
+});
+
+function showSoldOutPopup() {
+    document.getElementById('soldOutPopup').style.display = 'block';
+}
+
+function hideSoldOutPopup() {
+    document.getElementById('soldOutPopup').style.display = 'none';
+}
+
+    </script>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
+
