@@ -615,6 +615,12 @@ input::placeholder,
 }
 
 /* Hover effect */
+.shop-button:hover {
+    background-color: #a39d9d86; /* Darker black background on hover */
+    border-color: aliceblue; /* Darker black border on hover */
+}
+
+/* Hover effect */
 .send-button:hover {
     background-color: #a39d9d86; /* Darker black background on hover */
     border-color: aliceblue; /* Darker black border on hover */
