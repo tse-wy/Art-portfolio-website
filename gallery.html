@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="no-padding">
+    <div class="wrapper">
+        <header class="top-left-header">
+            <img src="logo.jpg" alt="Logo" class="logo-image">
+        </header>
+
+        <!-- navbar -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html#home" class="navbar-links">Home</a></li>
+                <li><a href="index.html#portfolio" class="navbar-links">Portfolio</a></li>
+                <li><a href="index.html#about" class="navbar-links">About</a></li>
+                <li><a href="index.html#shop" class="navbar-links">Shop</a></li>
+                <li><a href="index.html#contact" class="navbar-links">Contact</a></li>
+            </ul>
+        </nav>
+
+    <div class="gallery-container">
+        <div class="image-container">
+            <img src="Seaweed_Mermaid_.jpg" alt="Image 1" class="gallery-image" id="galleryImage">
+            <img src="Bored Monster.jpg" alt="Image 2" class="gallery-image">
+            <img src="Eclipse.jpg" alt="Image 3" class="gallery-image">
+            <img src="Bubble Tea.jpg" alt="Image 4" class="gallery-image">
+            <img src="What is a Youth JPEG.jpg" alt="Image 5" class="gallery-image">
+            <img src="inktober13.jpg" alt="Image 6" class="gallery-image">
+
+            <div class="image-caption" id="imageCaption">
+                <p class="caption-title">Title</p>
+                <p class="caption-date">Date</p>
+                <p class="caption-description">Brief description</p>
+            </div>
+
+            <div class="gallery-nav-buttons">
+                <button onclick="showPrevious()">←</button>
+                <button onclick="showNext()">→</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">2023 Nicole Nichols</div>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <span>|</span>
+        <a href="#" class="footer-link">Terms and Conditions</a>
+    </footer>
+</div>
+
+
+    <script>
+        var images = document.querySelectorAll('.gallery-image');
+        var captions = [
+            { title: "SEAWEED MERMAID", date: "2022", description: "Featured in ImagineFX, digital" },
+            { title: "BORED MONSTER", date: "2020", description: "Digital" },
+            { title: "ECLIPSE", date: "2021", description: "Digital" },
+            { title: "BUBBLE TEA", date: "2020", description: "Favourite flavour is Taro, digital" },
+            { title: "WHAT IS YOUTH", date: "2021", description: "Digital" },
+            { title: "INKTOBER 13", date: "2019", description: "Pen and Ink" }
+        ];
+        var currentIndex = 0;
+    
+        function showImage(index) {
+    // Remove the 'active' class from all images
+    images.forEach(image => image.classList.remove('active'));
+
+    // Add the 'active' class to the current image
+    images[index].classList.add('active');
+
+    document.getElementById('galleryImage').src = images[index].src;
+    document.getElementById('imageCaption').innerHTML = `
+        <p class="caption-title">${captions[index].title}</p>
+        <p class="caption-date">${captions[index].date}</p>
+        <p class="caption-description">${captions[index].description}</p>
+    `;
+}
+    
+        function showNext() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+    
+        function showPrevious() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+    
+        // Show the initial image and caption
+        showImage(currentIndex);
+    </script>
+    
+
+
+</body>
+</html>
