@@ -49,7 +49,7 @@ nav a {
     right: 0;
     background-color: #121212;
     color: #827444;
-    padding: 5px;
+    padding: 2px; /*4px for edge*/
     z-index: 1000;
 }
 
@@ -72,7 +72,7 @@ nav a {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px; /*14px for edge*/
     line-height: 24px;
     text-transform: uppercase;
     color: #827444;
@@ -98,7 +98,8 @@ nav a {
 .logo-image {
     width: 150px; 
     height: auto; 
-    margin: 10px; 
+    margin: 10px;
+    margin-top: -5px; 
 }
 
 
@@ -173,22 +174,22 @@ h1, h2, h3, h4, h5, h6 {
 /* scroll up to top and bottom */
 .scroll-button {
     position: fixed;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 35px; /*50px for edge*/
+    height: 35px; /*50px for edge*/
+    line-height: 35px; /*50px for edge*/
     text-align: center;
-    font-size: 24px;
+    font-size: 18px; /*24px for edge*/
     border: none;
     cursor: pointer;
     border-radius: 50%;
-    outline: 2px solid #827444;
+    outline: 1px solid #827444; /*2px for edge*/
     background-color: #121111; 
     color: white;
     display: none; /* Hide by default */
 }
 
 .top-button {
-    bottom: 90px;
+    bottom: 80px;
     right: 20px;
 }
 
@@ -273,7 +274,7 @@ header {
 
 #about .profile-column p {
     width: 90%; 
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .container {
@@ -289,7 +290,7 @@ header {
     max-width: 50%;
     box-sizing: border-box;
     padding-right: 20px; 
-    margin-top: 50px; /*-240 for vs*/
+    margin-top: -100px; /*-240px for edge*/
 }
 
 #about .profile-info {
@@ -298,13 +299,19 @@ header {
     align-items: center;
 }
 
+#about .profile-column h2 {
+   font-size: 23px;
+   margin-top: -20px;
+   margin-bottom: -20px;
+}
+
 #about .profile-column p {
     width: 100%; 
     padding-bottom: 50px;
 }
 
 .profile-picture {
-    width: 250px; 
+    width: 210px; /*250px for edge*/
     height: auto; 
     border-radius: 50%; 
     margin-bottom: 10px; 
@@ -364,7 +371,6 @@ header {
 
 
 
-
 /* shop section */
 body {
     background-color: #121212; 
@@ -379,6 +385,7 @@ body {
     margin-top: 0; 
     margin-bottom: 0; 
 }
+
 
 #shop h3 {
     font-size: 20px; 
@@ -478,6 +485,12 @@ body {
     max-width: 600px;
   
   }
+
+  /* mz09 image */
+  .container .column:nth-child(3) img {
+    max-width:120%; /* Adjust the percentage as needed */
+    margin: 0;
+  }
   
   .container .column:nth-child(1) img {
     margin-bottom: 20px;
@@ -540,9 +553,17 @@ body {
     font-size: 18px;
     background-color: #121111;
     cursor: pointer;
-    margin-top: -150px; /*-150px for vs not for github */
+    margin-top: -150px; /*-250px for edge*/
     margin-bottom: 10px; 
   }
+
+  /* Hover effect */
+.shop-button:hover {
+    background-color: #a39d9d86; /* Darker black background on hover */
+    border-color: aliceblue; /* Darker black border on hover */
+}
+
+/*  */
 /* Contact section */
 
 body {
@@ -561,7 +582,7 @@ body {
 .contact-form {
     display: flex;
     flex-direction: column;
-    padding-left: 200px;
+    padding-left: 170px; /*300 for edge*/
     padding-right: 200px;
     justify-content: center;
     text-align: left; 
@@ -577,12 +598,12 @@ send-button {
     margin: 8px 0;
     font-family: Arial, sans-serif;
     color: aliceblue;
-    font-size: 18px; 
+    font-size: 14px; 
     border: none; /* Remove input border */
     background-color: #121212;
     border-bottom: 2px solid aliceblue; /* Colored line as placeholder */
     outline: none; 
-    width: 850px;
+    width: 750px;
 }
 
 textarea {
@@ -594,7 +615,7 @@ input::placeholder,
  textarea::placeholder {
     color:aliceblue; /* Placeholder text color */
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .send-button {
@@ -612,12 +633,6 @@ input::placeholder,
     margin-top: 100px;
     margin-bottom: 250px;
     
-}
-
-/* Hover effect */
-.shop-button:hover {
-    background-color: #a39d9d86; /* Darker black background on hover */
-    border-color: aliceblue; /* Darker black border on hover */
 }
 
 /* Hover effect */
