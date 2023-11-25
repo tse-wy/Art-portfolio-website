@@ -96,7 +96,7 @@ nav a {
 
 /* Style for the logo image */
 .logo-image {
-    width: 150px; 
+    width: 140px; 
     height: auto; 
     margin: 10px;
     margin-top: -5px; 
@@ -543,14 +543,14 @@ body {
   
   .shop-button {
     display: block;
-    width: 180px;
-    height: 65px;
+    width: 120px;
+    height: 50px;
     padding: 0;
     border: 1px solid aliceblue;
     color: aliceblue;
     text-decoration: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     background-color: #121111;
     cursor: pointer;
     margin-top: -150px; /*-250px for edge*/
@@ -620,20 +620,19 @@ input::placeholder,
 
 .send-button {
     display: inline-block;
-    width: 180px; 
-    height: 65px; 
+    width: 120px; 
+    height: 50px; 
     padding: 10px; 
     border: 1px solid aliceblue; 
     color: aliceblue; 
     text-decoration: none;
     text-align: center;
-    font-size: 18px; 
+    font-size: 16px; 
     background-color: #181818; 
     cursor: pointer;
     margin-top: 100px;
     margin-bottom: 250px;
     
-}
 
 /* Hover effect */
 .send-button:hover {
@@ -694,7 +693,7 @@ footer {
 }
 
 .copyright {
-    font-size: 16px; 
+    font-size: 12px; 
     font-weight: bold; 
     margin-bottom: 10px; 
 }
